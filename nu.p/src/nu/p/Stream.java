@@ -12,4 +12,8 @@ public class Stream {
 	public Stream(){
 		reddit = new Reddit();
 	}
+	
+	public String getNextRedditElement(){
+		return reddit.getNextElement();
+	}
 }

@@ -1,10 +1,11 @@
 package nu.p;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class Frame {
 
@@ -22,16 +23,17 @@ public class Frame {
 		frame.setSize(FRAME_DIMENSION);
 		frame.getContentPane().setBackground(Color.black);
 		
-		/*
-		 * Creates the test labels to be added
-		 */
-		JLabel label = new JLabel("test");
-		label.setForeground(Color.GREEN);
-		label.setLocation(40, 10);
+		JTextArea area = new JTextArea();
+		area.setEditable(false);
+		area.append("hi");
+		area.setForeground(Color.GREEN);
+		area.setBackground(Color.BLACK);
 
-		//Adds the label to the frame
-		frame.getContentPane().add(label);
-		
+		frame.getContentPane().add(area, BorderLayout.PAGE_START);
 		frame.setVisible(true);
+	}
+	
+	public String nextElements(){
+		return stream.getNextRedditElement();
 	}
 }

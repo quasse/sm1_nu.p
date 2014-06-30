@@ -15,7 +15,7 @@ public class Main {
 		
 		//Creates the Frame
 		Frame frame = new Frame();
-
+		
 	}
 
 }
