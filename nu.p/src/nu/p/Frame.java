@@ -4,8 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 
 public class Frame {
 
@@ -23,11 +26,23 @@ public class Frame {
 		frame.setSize(FRAME_DIMENSION);
 		frame.getContentPane().setBackground(Color.black);
 		
+		
+		JEditorPane editor = new JEditorPane();
+		editor.setEditable(false);
+		editor.setForeground(Color.GREEN);
+		editor.setBackground(Color.BLACK);
+		HyperlinkEvent event = new HyperlinkEvent();
+		HyperlinkListener listener = new HyperlinkListener(event);
+		editor.addHyperlinkListener(listener);
+		
+		
+		//Sets up a text area 
 		JTextArea area = new JTextArea();
 		area.setEditable(false);
-		area.append("hi");
+		area.setLineWrap(true);
 		area.setForeground(Color.GREEN);
 		area.setBackground(Color.BLACK);
+		area.append("hi");
 
 		frame.getContentPane().add(area, BorderLayout.PAGE_START);
 		frame.setVisible(true);
