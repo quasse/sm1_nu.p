@@ -12,6 +12,9 @@ public class Main {
 		
 		//Initialize the Logger
 		BasicConfigurator.configure();
+		
+		//Creates the Frame
+		Frame frame = new Frame();
 
 	}
 
