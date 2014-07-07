@@ -39,7 +39,7 @@ public class Reddit {
 	 * @return
 	 */
 	public String getNextElement(){
-		String elm = getHeadline() + "|" + getLink();
+		String elm = getHeadline() + "-" + getLink();
 		advance();
 		return elm;
 	}
@@ -54,7 +54,7 @@ public class Reddit {
 	 * under the variable "link". 
 	 * @return
 	 */
-	public String getHeadline(){
+	private String getHeadline(){
 		while (scraper.hasNext()){
 			tag = scraper.getNextTag();
 			if (tag.toString().contains("title")){
@@ -73,7 +73,7 @@ public class Reddit {
 	 * "http://www.reddit.com is added to the beginning of the string.
 	 * @return
 	 */
-	public String getLink(){
+	private String getLink(){
 		String address = link.getAttributes().get("href");
 		if (address.contains("/r/"))
 			address = "http://www.reddit.com" + address;
@@ -83,7 +83,7 @@ public class Reddit {
 	/**
 	 * Advances the Scraper to the next Reddit entry.
 	 */
-	public void advance(){
+	private void advance(){
 		while (scraper.hasNext()){
 			if (tag.toString().contains("thing")){
 				return;

@@ -1,5 +1,7 @@
 package nu.p;
 
+import java.net.URL;
+
 /**
  * Class in which all the websites information is interpreted.
  * @author smorgen
@@ -7,7 +9,7 @@ package nu.p;
  */
 public class Stream {
 	
-	Reddit reddit;
+	private Reddit reddit;
 	
 	public Stream(){
 		reddit = new Reddit();

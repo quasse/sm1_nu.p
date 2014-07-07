@@ -1,7 +1,5 @@
 package nu.p;
 
-import java.util.stream.Stream;
-
 import org.apache.log4j.*;
 
 public class Main {
@@ -14,7 +12,8 @@ public class Main {
 		BasicConfigurator.configure();
 		
 		//Creates the Frame
-		Frame frame = new Frame();
+		Frame frame = new Frame(logger);
+		
 		
 	}
 
